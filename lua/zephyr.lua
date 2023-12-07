@@ -24,22 +24,24 @@ local z = {
 
 	red = "#e95678",
 	redwine = "#d16d9e",
-	orange = "#FF8700",
+	orange = "#F27635",
 	yellow = "#f0d695",
 	lignt_orange = "#fab795",
-	green = "#afd700",
+	green = "#66c18c",
 	-- #a8eb44
 	dark_green = "#98be65",
 	cyan = "#36d0e0",
 	blue = "#61afef",
 	violet = "#CBA6F7",
 	magenta = "#c678dd",
+	weizi = "#7E1671",
 	teal = "#1abc9c",
 	grey = "#928374",
 	brown = "#c78665",
 	black = "#000000",
 
 	bracket = "#80A0C2",
+	jiqing = "#63BBD0",
 	none = "NONE",
 }
 
@@ -123,10 +125,11 @@ local syntax = {
 	Float = { fg = z.brown },
 	PreProc = { fg = z.violet },
 	PreCondit = { fg = z.violet },
-	Include = { fg = z.violet },
+	Include = { fg = z.violet, italic = true },
 	Define = { fg = z.violet },
-	Conditional = { fg = z.magenta, italic = true },
-	Repeat = { fg = z.magenta },
+	Conditional = { fg = z.violet, italic = true },
+	Repeat = { fg = z.red },
+	-- Keyword = { fg = z.green, italic = true },
 	Keyword = { fg = z.green, italic = true },
 	Typedef = { fg = z.red },
 	Exception = { fg = z.red },
@@ -164,11 +167,13 @@ local syntax = {
 
 local plugin_syntax = {
 	["@function"] = { fg = z.cyan },
+	["@function.call"] = { fg = z.cyan, italic = true },
 	["@method"] = { fg = z.cyan },
 	["@keyword.function"] = { fg = z.red, italic = true },
 	["@property"] = { fg = z.yellow },
 	["@type"] = { fg = z.teal },
-	["@variable"] = { fg = "#f2f2bf" },
+	["@variable"] = { fg = z.jiqing },
+	["@variable.builtin"] = { fg = z.red },
 	["@punctuation.bracket"] = { fg = z.bracket },
 
 	vimCommentTitle = { fg = z.grey, bold = true },
@@ -289,6 +294,8 @@ local plugin_syntax = {
 	NeogitDiffContextHighlight = { fg = z.blue },
 	NeogitHunkHeader = { fg = z.fg },
 	NeogitHunkHeaderHighlight = { fg = z.redwine },
+
+	SagaVariable = { fg = z.cyan },
 }
 
 local async_load_plugin
